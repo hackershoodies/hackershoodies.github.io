@@ -22,6 +22,34 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<style>
+		.cookie-banner {
+	position: fixed;
+	bottom: 40px;
+	left: 10%;
+  right: 10%;
+  width: 80%;
+  padding: 5px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  height: 20px;
+  background-color: #777;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+	</style>
+	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 </head><!--/head-->
 
 <body>
@@ -398,7 +426,33 @@
 							</div>
 						</div>
 						<div class="col-sm-4">
-							<div class="product-image-wrapper">
+							<script>
+document.write(`<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="https://images-api.printify.com/mockup/65ba3c8bf37183c61e0875ff/25458/98502/unisex-heavy-blend-crewneck-sweatshirt.jpg?camera_label=front" alt="" />
+										<h2>$156</h2>
+										<p>Easy Polo Black Edition</p>
+										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<h2>$156</h2>
+											<p>Easy Polo Black Edition</p>
+											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									</ul>
+								</div>
+							</div>`);
+
+							</script>
+					<!--		<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/product2.jpg" alt="" />
@@ -420,7 +474,7 @@
 										<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
-							</div>
+							</div>-->
 						</div>
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
@@ -1075,8 +1129,21 @@
 		
 	</footer><!--/Footer-->
 	
+	<div class="cookie-banner" style="display: none">
+		<p>By using our website, you agree to our <a href=’insert link’>cookie policy</a></p>
+		<button class="close">&times;</button>
+	</div>
+	
+	<script>
+		if(localStorage.getItem('cookieSeen') != 'shown'){
+    $(".cookie-banner").delay(2000).fadeIn();
+    localStorage.setItem('cookieSeen','shown')
+}
 
-  
+$('.close').click(function(e) {
+  $('.cookie-banner').fadeOut(); 
+});
+	</script>
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery.scrollUp.min.js"></script>
