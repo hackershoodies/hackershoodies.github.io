@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--* The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!--* Title -->
+    <title>Image Slider | 10+ Vanilla Javascript Projects by Timonwa.</title>
+
+    <!-- * SEO Meta Tags -->
+    <!-- Primary Meta Tags -->
+    <meta
+      name="title"
+      content="Image Slider | 10+ Vanilla Javascript Projects by Timonwa."
+    />
+    <meta
+      name="description"
+      content="A collection of javascript projects from the javascript project series written on Timonwa's Notes Blog.'"
+    />
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://javascript-project-series.vercel.app"
+    />
+    <meta
+      property="og:title"
+      content="Image Slider | 10+ Vanilla Javascript Projects by Timonwa."
+    />
+    <meta
+      property="og:description"
+      content="A collection of javascript projects from the javascript project series written on Timonwa's Notes Blog.'"
+    />
+    <meta
+      property="og:image"
+      content="https://javascript-project-series.vercel.app/assets/seo-image.png"
+    />
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://javascript-project-series.vercel.app"
+    />
+    <meta
+      property="twitter:title"
+      content="Image Slider | 10+ Vanilla Javascript Projects by Timonwa."
+    />
+    <meta
+      property="twitter:description"
+      content="A collection of javascript projects from the javascript project series written on Timonwa's Notes Blog.'"
+    />
+    <meta
+      property="twitter:image"
+      content="https://javascript-project-series.vercel.app/assets/seo-image.png"
+    />
+
+    <!--* Icons -->
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+
+    <!--* CSS -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/main123.css" />
+    <!-- Accordion CSS -->
+    <link rel="stylesheet" href="./css/test.css" />
+  </head>
+
+  <body>
+    <!--* container/body wrapper for every content in the body -->
+    <div class="flex">
+      <!--* nav bar -->
+      <nav>
+        <div class="nav-cntr">
+          <!-- logo -->
+          <div class="logo">
+            <p><a href="/">HOME</a></p>
+          </div>
+
+          <!-- nav toggle -->
+          <div class="menu">
+            <p>Projects</p>
+          </div>
+
+          <!-- nav links -->
+          <ul class="nav-links">
+            <li>
+              <a href="../01-accordion/index.html">Accordions</a>
+            </li>
+            <li>
+              <a href="../02-color-flipper/index.html">Color Flipper</a>
+            </li>
+            <li class="active-link">
+              <a href="../03-image-slider/index.html">Image Slider</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="nav-space"></div>
+
+      <!--* banner -->
+      <header>
+        <div class="page-header">
+          <h1>Image Slider</h1>
+        </div>
+      </header>
+
+      <!--* body -->
+      <main>
+        <div class="main-wrapper">
+          <!--* slider cntr -->
+          <div class="slider">
+            <!-- image -->
+            <img class="slide-image" src="" alt="" />
+            <!-- the count and number of the images -->
+            <p>
+              <span class="slide-image-number"></span> of
+              <span class="total-image-number"></span>
+            </p>
+            <!-- previous btn -->
+            <div class="btn backward">
+              <span class="material-icons-outlined"> chevron_left </span>
+            </div>
+            <!-- next btn -->
+            <div class="btn forward">
+              <span class="material-icons-outlined"> chevron_right </span>
+            </div>
+          </div>
+
+          <!--* modal -->
+          <div class="modal">
+            <span class="close-modal material-icons-outlined"> close </span>
+
+            <!-- modal content -->
+            <div class="modal-content">
+              <!--* slider cntr -->
+              <div class="slider">
+                <!-- image -->
+                <img class="slide-image" src="" alt="" />
+                <!-- the count and number of the images -->
+                <p>
+                  <span class="slide-image-number"></span> of
+                  <span class="total-image-number"></span>
+                </p>
+                <!-- previous btn -->
+                <div class="btn backward">
+                  <span class="material-icons-outlined"> chevron_left </span>
+                </div>
+                <!-- next btn -->
+                <div class="btn forward">
+                  <span class="material-icons-outlined"> chevron_right </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="wrapper">
+          <p class="attribution">
+            Created by
+            <a href="https://github.com/timonwa" target="_blank">Timonwa</a> for
+            <a href="https://blog.timonwa.com" target="_blank"
+              >Timonwa's Blogs.</a
+            >
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!--* JavaScripts -->
+    <!-- Main script -->
+    <script src="../main-script.js"></script>
+    <!-- Accordion script -->
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
