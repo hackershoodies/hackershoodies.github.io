@@ -17,7 +17,7 @@ function loadXMLDoc() {
             }
         }
     };
-    xmlhttp.open("GET", "data.json", true);
+    xmlhttp.open("GET", "/js/data1.json", true);
     xmlhttp.send();
 }
 
