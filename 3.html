@@ -73,6 +73,8 @@
 </body>
 <script>
   var data = {};
+  var globalObjectCount = 0;
+  var globalObject1 = 0;
   const getJSON = async url => {
   const response = await fetch(url);
   if(!response.ok) // check if response worked (no 404 errors etc...)
@@ -87,15 +89,97 @@ getJSON("https://node1-git-main-ju3tin.vercel.app/dude.json").then(data => {
  // var x1 = document.getElementsByTagName("body")[0];
 
  // console.log(data);
-  document.write("Hello World!");
+ var x2 = document.getElementsByTagName("body")[0];
+ var NewElement00 = document.createElement('div');
+ var NewElement01 = document.createElement('ul');
+ 
+var NewElement02 = document.createElement('a');
+var NewElement03 = document.createElement('a');
+ NewElement00.id = 'slider';
+ NewElement01.id = 'slideWrap';
+ NewElement02.id = "prev";
+NewElement03.id = "next";
+NewElement02.setAttribute("href","#");
+NewElement03.setAttribute("href","#");
+NewElement02.innerHTML = "≪";
+NewElement03.innerHTML = "≫";
+// NewElement00.innerHTML = JSON.stringify(data.data);
+ x2.appendChild(NewElement00);
+ NewElement00.appendChild(NewElement01);
+ 
+NewElement00.appendChild(NewElement02);
+NewElement00.appendChild(NewElement03);
+//  document.write(JSON.stringify(data.data));
+data.data.forEach(function(item, ii) {
+    
+    var dataCount1 = data.data.length; // Count objects in the 'data' array
+    globalObjectCount += dataCount1;
+	var dude34a = ii++;
+    globalObject1 = 1 + dude34a;
+    var var01 = document.createElement('li');
+    var var02 = document.createElement('img');
+    NewElement01.appendChild(var01);
+    var01.appendChild(var02);
+    var02.setAttribute("src",data.data[dude34a].images[0].src);
+	console.log(dude34a);
+    console.log(data.data[dude34a].images[0].src);
+    })
+   
+var sliderWidth1 = NewElement00.offsetWidth;
+console.log(sliderWidth1);
+console.log("this is a count"+globalObject1);
+var slideList = document.getElementById("slideWrap");
+var count = 1;
+var items = globalObject1;
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+
+window.addEventListener('resize', function() {
+  sliderWidth = slider.offsetWidth;
+});
+
+var prevSlide = function() {
+  if(count > 1) {
+    count = count - 2;
+    slideList.style.left = "-" + count * sliderWidth1 + "px";
+    count++;
+  }
+  else if(count = 1) {
+    count = items - 1;
+    slideList.style.left = "-" + count * sliderWidth1 + "px";
+    count++;
+  }
+};
+
+var nextSlide = function() {
+  if(count < items) {
+    slideList.style.left = "-" + count * sliderWidth1 + "px";
+    count++;
+  }
+  else if(count = items) {
+    slideList.style.left = "0px";
+    count = 1;
+  }
+};
+
+next.addEventListener("click", function() {
+  nextSlide();
+});
+
+prev.addEventListener("click", function() {
+  prevSlide();
+});
+
+setInterval(function() {
+  nextSlide()
+}, 5000);
+
 }).catch(error => {
   console.error(error);
 });
 const body = document.body;
-body.onload = myFunction;
-var globalObjectCount = 0;
-var globalObject1 = 0;
-
+//body.onload = myFunction;
+/*
 function myFunction() {
 //alert('Page finished loading');
 var x = document.getElementsByTagName("body")[0];
@@ -210,7 +294,7 @@ setInterval(function() {
 console.log(items)
 }
 }
-/*
+
 var responsiveSlider = function() {
 
 var slider = document.getElementById("slider");
