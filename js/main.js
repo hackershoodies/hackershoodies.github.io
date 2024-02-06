@@ -31,6 +31,12 @@ var NewElement01 = document.createElement('ul');
 
 var NewElement02 = document.createElement('a');
 var NewElement03 = document.createElement('a');
+
+var NewElement02a = document.createElement('a');
+var NewElement03a = document.createElement('a');
+
+var NewElement02b = document.createElement('i');
+var NewElement03b = document.createElement('i');
 NewElement00a.id = 'slider1';
 NewElement00.id = 'container2';
 NewElement00.setAttribute("class",'container');
@@ -46,6 +52,15 @@ NewElement02.id = "prev";
 NewElement03.id = "next";
 NewElement02.setAttribute("href","#");
 NewElement03.setAttribute("href","#");
+NewElement02a.setAttribute("href","#slider-carousel");
+NewElement02a.setAttribute("data-slide","prev");
+NewElement03a.setAttribute("href","#slider-carousel");
+NewElement03a.setAttribute("data-slide","next");
+NewElement02a.classList.add('left','control-carousel','hidden-xs');
+NewElement03a.classList.add('right','control-carousel','hidden-xs');
+
+NewElement02b.classList.add('fa','fa-angle-left');
+NewElement03b.classList.add('fa','fa-angle-right');
 NewElement02.innerHTML = "≪";
 NewElement03.innerHTML = "≫"; 
 // NewElement00.innerHTML = JSON.stringify(data.data);
@@ -64,6 +79,12 @@ NewElement00d.appendChild(NewElement01);
 
 NewElement00.appendChild(NewElement02);
 NewElement00.appendChild(NewElement03);
+
+NewElement00d.appendChild(NewElement02a);
+NewElement00d.appendChild(NewElement03a);
+
+NewElement02a.appendChild(NewElement02b);
+NewElement03a.appendChild(NewElement03b);
 //  document.write(JSON.stringify(data.data));
 data.data.forEach(function(item, ii) {
   
