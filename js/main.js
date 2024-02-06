@@ -20,6 +20,9 @@ getJSON("https://node1-git-main-ju3tin.vercel.app/dude.json").then(data => {
 // console.log(data);
 var x2 = document.getElementById("header")[0];
 
+var NewElement00e = document.createElement('ol');
+var NewElement00d = document.createElement('div');
+var NewElement00c = document.createElement('div');
 var NewElement00b = document.createElement('div');
 var NewElement00 = document.createElement('div');
 var NewElement00a = document.createElement('section');
@@ -31,6 +34,12 @@ var NewElement03 = document.createElement('a');
 NewElement00a.id = 'slider1';
 NewElement00.id = 'container2';
 NewElement00.setAttribute("class",'container');
+NewElement00e.id = 'carousel-indicators';
+NewElement00e.setAttribute("class","carousel-indicators");
+NewElement00d.id = 'slider-carousel';
+NewElement00d.classList.add('carousel','slide');
+NewElement00d.setAttribute("data-ride", "carousel");
+NewElement00c.setAttribute("class",'col-sm-12');
 NewElement00b.setAttribute("class",'row');
 NewElement01.id = 'slideWrap';
 NewElement02.id = "prev";
@@ -44,10 +53,14 @@ NewElement03.innerHTML = "≫";
 
 NewElement00a.appendAfter(header);
 
-//
-NewElement00a.appendChild(NewElement00b);
-NewElement00b.appendChild(NewElement00);
-NewElement00.appendChild(NewElement01);
+
+NewElement00a.appendChild(NewElement00);
+NewElement00.appendChild(NewElement00b);
+
+NewElement00b.appendChild(NewElement00c);
+NewElement00c.appendChild(NewElement00d);
+NewElement00d.appendChild(NewElement00e);
+NewElement00d.appendChild(NewElement01);
 
 NewElement00.appendChild(NewElement02);
 NewElement00.appendChild(NewElement03);
@@ -59,6 +72,7 @@ data.data.forEach(function(item, ii) {
   var dude34a = ii++;
   globalObject1 = 1 + dude34a;
   var var01 = document.createElement('li');
+  var var01a = document.createElement('li');
   var var02 = document.createElement('img');
   var var03 = document.createElement('span');
   var var04 = document.createElement('span');
@@ -68,6 +82,9 @@ data.data.forEach(function(item, ii) {
   var06.setAttribute("type","button");
   
   NewElement01.appendChild(var01);
+  
+  NewElement00e.appendChild(var01a);
+  
   var01.appendChild(var02);
   var01.appendChild(var03);
   var01.appendChild(var04);
@@ -75,7 +92,9 @@ data.data.forEach(function(item, ii) {
   var01.appendChild(var06);
   
   var01.appendChild(var07);
-  
+  var01a.setAttribute("data-target","#slider-carousel");
+  var01a.setAttribute("data-slide-to",globalObject1);
+  if (dude34a < 1){var01a.setAttribute("class","active")};
   var07.setAttribute("src",'images/home/pricing.png');
   var02.setAttribute("src",data.data[dude34a].images[0].src);
   var03.innerHTML = data.data[dude34a].title;
@@ -109,6 +128,8 @@ sliderWidth = slider.offsetWidth;
 var prevSlide = function() {
 if(count > 1) {
   count = count - 2;
+  const element = document.getElementById("carousel-indicators");
+  let numb = element.childNodes.length;
   slideList.style.left = "-" + count * sliderWidth1 + "px";
   count++;
 }
@@ -121,12 +142,25 @@ else if(count = 1) {
 
 var nextSlide = function() {
 if(count < items) {
+  const element = document.getElementById("carousel-indicators");
+  let numb = element.childNodes[count];
+  element.childNodes[count].setAttribute('class','active');
+  
+  
+  console.log(numb);
   slideList.style.left = "-" + count * sliderWidth1 + "px";
   count++;
 }
 else if(count = items) {
   slideList.style.left = "0px";
   count = 1;
+  
+  const element = document.getElementById("carousel-indicators");
+  let numb = element.childNodes[0];
+  element.childNodes[0].setAttribute('class','active');
+  
+  
+  console.log(numb);
 }
 };
 
@@ -139,6 +173,9 @@ prevSlide();
 });
 
 setInterval(function() {
+  $(function(){
+    $("#carousel-indicators>li.active").removeClass("active");
+  })
 nextSlide()
 }, 5000);
 
@@ -268,7 +305,7 @@ valueCell1.appendChild(valueCell3);
 	  if (dude34 = 0){valueCell1.setAttribute("class","active")};
     //  valueCell.textContent = item.id
 
-	document.getElementById('carousel-indicators').appendChild(valueCell);
+//	document.getElementById('carousel-indicators').appendChild(valueCell);
 	document.getElementById('carousel-inner').appendChild(valueCell1);
       
     });
