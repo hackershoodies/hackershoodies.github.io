@@ -1,5 +1,152 @@
 /*price range*/
+$(document).ready(function(){
+	$(function () {
+var data = {};
+var globalObjectCount = 0;
+var globalObject1 = 0;
+const getJSON = async url => {
+const response = await fetch(url);
+if(!response.ok) // check if response worked (no 404 errors etc...)
+  throw new Error(response.statusText);
 
+const data = response.json(); // get JSON from the response
+return data; // returns a promise, which resolves to this data value
+}
+
+console.log("Fetching data...");
+getJSON("https://node1-git-main-ju3tin.vercel.app/dude.json").then(data => {
+// var x1 = document.getElementsByTagName("body")[0];
+
+// console.log(data);
+var x2 = document.getElementById("header")[0];
+
+var NewElement00b = document.createElement('div');
+var NewElement00 = document.createElement('div');
+var NewElement00a = document.createElement('section');
+
+var NewElement01 = document.createElement('ul');
+
+var NewElement02 = document.createElement('a');
+var NewElement03 = document.createElement('a');
+NewElement00a.id = 'slider1';
+NewElement00.id = 'container2';
+NewElement00.setAttribute("class",'container');
+NewElement00b.setAttribute("class",'row');
+NewElement01.id = 'slideWrap';
+NewElement02.id = "prev";
+NewElement03.id = "next";
+NewElement02.setAttribute("href","#");
+NewElement03.setAttribute("href","#");
+NewElement02.innerHTML = "≪";
+NewElement03.innerHTML = "≫"; 
+// NewElement00.innerHTML = JSON.stringify(data.data);
+//
+
+NewElement00a.appendAfter(header);
+
+//
+NewElement00a.appendChild(NewElement00b);
+NewElement00b.appendChild(NewElement00);
+NewElement00.appendChild(NewElement01);
+
+NewElement00.appendChild(NewElement02);
+NewElement00.appendChild(NewElement03);
+//  document.write(JSON.stringify(data.data));
+data.data.forEach(function(item, ii) {
+  
+  var dataCount1 = data.data.length; // Count objects in the 'data' array
+  globalObjectCount += dataCount1;
+  var dude34a = ii++;
+  globalObject1 = 1 + dude34a;
+  var var01 = document.createElement('li');
+  var var02 = document.createElement('img');
+  var var03 = document.createElement('span');
+  var var04 = document.createElement('span');
+  var var05 = document.createElement('span');
+  var var06 = document.createElement('button');
+  var var07 = document.createElement('img')
+  var06.setAttribute("type","button");
+  
+  NewElement01.appendChild(var01);
+  var01.appendChild(var02);
+  var01.appendChild(var03);
+  var01.appendChild(var04);
+  var01.appendChild(var05);
+  var01.appendChild(var06);
+  
+  var01.appendChild(var07);
+  
+  var07.setAttribute("src",'images/home/pricing.png');
+  var02.setAttribute("src",data.data[dude34a].images[0].src);
+  var03.innerHTML = data.data[dude34a].title;
+  var03.classList.add('product_title');
+  var04.innerHTML = data.data[dude34a].description;
+  var04.classList.add('product_description');
+  
+  var05.innerHTML = data.data[dude34a].variants[0].price;
+  var05.classList.add('product_price');
+  var06.innerHTML = 'Get It Now';
+  
+  var02.classList.add('girl','img-responsive');
+  var06.classList.add('btn','btn-default','get');
+  console.log(dude34a);
+  console.log(data.data[dude34a].images[0].src);
+  })
+ 
+var sliderWidth1 = NewElement00.offsetWidth;
+console.log(sliderWidth1);
+console.log("this is a count"+globalObject1);
+var slideList = document.getElementById("slideWrap");
+var count = 1;
+var items = globalObject1;
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+
+window.addEventListener('resize', function() {
+sliderWidth = slider.offsetWidth;
+});
+
+var prevSlide = function() {
+if(count > 1) {
+  count = count - 2;
+  slideList.style.left = "-" + count * sliderWidth1 + "px";
+  count++;
+}
+else if(count = 1) {
+  count = items - 1;
+  slideList.style.left = "-" + count * sliderWidth1 + "px";
+  count++;
+}
+};
+
+var nextSlide = function() {
+if(count < items) {
+  slideList.style.left = "-" + count * sliderWidth1 + "px";
+  count++;
+}
+else if(count = items) {
+  slideList.style.left = "0px";
+  count = 1;
+}
+};
+
+next.addEventListener("click", function() {
+nextSlide();
+});
+
+prev.addEventListener("click", function() {
+prevSlide();
+});
+
+setInterval(function() {
+nextSlide()
+}, 5000);
+
+}).catch(error => {
+console.error(error);
+});
+})
+});
  $('#sl2').slider();
 
 	var RGBChange = function() {
@@ -7,6 +154,8 @@
 	};	
 		
 /*scroll to top*/
+
+
 
 $(document).ready(function(){
 	$(function () {
@@ -47,8 +196,8 @@ NewElement.id = 'slider';
 /*  Add NewElement BEFORE -OR- AFTER Using the Aforementioned Prototypes */
 NewElement.appendAfter(document.getElementById('header'));
 var NewElement1 = document.createElement('div');
-NewElement1.classList.add('container');
 NewElement1.id = 'container1';
+NewElement1.classList.add('container');
 document.getElementById('slider').appendChild(NewElement1);
 var NewElement2 = document.createElement('div');
 NewElement2.classList.add('row');
