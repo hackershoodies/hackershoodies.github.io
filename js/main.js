@@ -21,6 +21,7 @@ getJSON("https://node1-git-main-ju3tin.vercel.app/dude.json").then(data => {
 var x2 = document.getElementById("header")[0];
 
 var NewElement00e = document.createElement('ol');
+var NewElement00f = document.createElement('div');
 var NewElement00d = document.createElement('div');
 var NewElement00c = document.createElement('div');
 var NewElement00b = document.createElement('div');
@@ -44,6 +45,7 @@ NewElement00e.id = 'carousel-indicators';
 NewElement00e.setAttribute("class","carousel-indicators");
 NewElement00d.id = 'slider-carousel';
 NewElement00d.classList.add('carousel','slide');
+NewElement00f.classList.add('carousel-inner');
 NewElement00d.setAttribute("data-ride", "carousel");
 NewElement00c.setAttribute("class",'col-sm-12');
 NewElement00b.setAttribute("class",'row');
@@ -75,6 +77,8 @@ NewElement00.appendChild(NewElement00b);
 NewElement00b.appendChild(NewElement00c);
 NewElement00c.appendChild(NewElement00d);
 NewElement00d.appendChild(NewElement00e);
+
+NewElement00d.appendChild(NewElement00f);
 NewElement00d.appendChild(NewElement01);
 
 NewElement00.appendChild(NewElement02);
@@ -92,35 +96,62 @@ data.data.forEach(function(item, ii) {
   globalObjectCount += dataCount1;
   var dude34a = ii++;
   globalObject1 = 1 + dude34a;
+  var var01c = document.createElement('div');
+  var var01d = document.createElement('div');
+  var var01e = document.createElement('h1');
+  var var01f = document.createElement('h2');
+  var var01g = document.createElement('p');
+  var var01b = document.createElement('div');
   var var01 = document.createElement('li');
   var var01a = document.createElement('li');
   var var02 = document.createElement('img');
+  var var02a = document.createElement('img');
   var var03 = document.createElement('span');
   var var04 = document.createElement('span');
   var var05 = document.createElement('span');
   var var06 = document.createElement('button');
-  var var07 = document.createElement('img')
+  var var07 = document.createElement('img');
+  var var06a = document.createElement('button');
+  var var07a = document.createElement('img');
   var06.setAttribute("type","button");
   
   NewElement01.appendChild(var01);
   
   NewElement00e.appendChild(var01a);
   
+  NewElement00f.appendChild(var01b);
   var01.appendChild(var02);
   var01.appendChild(var03);
   var01.appendChild(var04);
   var01.appendChild(var05);
   var01.appendChild(var06);
+  var01b.appendChild(var01c);
+  var01b.appendChild(var01d);
+  var01c.appendChild(var01e);
+  var01c.appendChild(var01f);
+  var01c.appendChild(var01g);
+  var01d.appendChild(var02a);
+  var01d.appendChild(var07a);
   
   var01.appendChild(var07);
   var01a.setAttribute("data-target","#slider-carousel");
+  var01b.classList.add("item");
+  var01c.setAttribute("class","col-sm-6");
+  var01d.setAttribute("class","col-sm-6");
   var01a.setAttribute("data-slide-to",globalObject1);
   if (dude34a < 1){var01a.setAttribute("class","active")};
   var07.setAttribute("src",'images/home/pricing.png');
+  var07a.setAttribute("src",'images/home/pricing.png');
+  var07a.setAttribute("class","pricing")
   var02.setAttribute("src",data.data[dude34a].images[0].src);
+  var02a.setAttribute("src",data.data[dude34a].images[0].src);
+  var02a.classList.add('girl','img-responsive');
+  var01e.innerHTML = `<span>E</span>-SHOPPER`;
+  var01f.innerHTML = data.data[dude34a].title;
   var03.innerHTML = data.data[dude34a].title;
   var03.classList.add('product_title');
   var04.innerHTML = data.data[dude34a].description;
+  var01g.innerHTML = data.data[dude34a].description;
   var04.classList.add('product_description');
   
   var05.innerHTML = data.data[dude34a].variants[0].price;
@@ -274,6 +305,9 @@ document.getElementById('col-sm-121').appendChild(NewElement4);
 var NewElement5 = document.createElement('ol');
 NewElement5.classList.add('carousel-indicators');
 NewElement5.id = 'carousel-indicators';
+var NewElement5a = document.createElement('div');
+NewElement5a.classList.add('carousel-inner');
+//NewElement5a.id = 'carousel-indicators';
 document.getElementById('slider-carousel').appendChild(NewElement5);
 var NewElement6 = document.createElement('div');
 NewElement6.classList.add('carousel-inner');
@@ -327,7 +361,7 @@ valueCell1.appendChild(valueCell3);
     //  valueCell.textContent = item.id
 
 //	document.getElementById('carousel-indicators').appendChild(valueCell);
-	document.getElementById('carousel-inner').appendChild(valueCell1);
+//	document.getElementById('carousel-inner').appendChild(valueCell1);
       
     });
   }
