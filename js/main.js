@@ -178,7 +178,8 @@ var prev = document.getElementById("prev");
 var next = document.getElementById("next");
 
 window.addEventListener('resize', function() {
-sliderWidth = NewElement00.offsetWidth;
+	//sliderWidth = slider.offsetWidth;
+var sliderWidth = NewElement00.offsetWidth;
 });
 
 var prevSlide = function() {
