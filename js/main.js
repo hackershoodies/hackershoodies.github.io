@@ -164,6 +164,7 @@ data.data.forEach(function(item, ii) {
   var02.classList.add('girl','img-responsive');
   var06.classList.add('btn','btn-default','get');
   var06a.classList.add('btn','btn-default','get');
+  var06a.setAttribute(`onclick`,`location.href='http://www.example.com'`);
   console.log(dude34a);
   console.log(data.data[dude34a].images[0].src);
   })
