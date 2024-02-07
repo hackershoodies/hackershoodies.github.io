@@ -114,7 +114,7 @@ data.data.forEach(function(item, ii) {
   var var06a = document.createElement('button');
   var var07a = document.createElement('img');
   var06.setAttribute("type","button");
-  
+  var06a.setAttribute("type","button");
   NewElement01.appendChild(var01);
   
   NewElement00e.appendChild(var01a);
@@ -130,6 +130,7 @@ data.data.forEach(function(item, ii) {
   var01c.appendChild(var01e);
   var01c.appendChild(var01f);
   var01c.appendChild(var01g);
+  var01c.appendChild(var06a);
   var01d.appendChild(var02a);
   var01d.appendChild(var07a);
   
@@ -159,9 +160,10 @@ data.data.forEach(function(item, ii) {
   var05.innerHTML = data.data[dude34a].variants[0].price;
   var05.classList.add('product_price');
   var06.innerHTML = 'Get It Now';
-  
+  var06a.innerHTML = 'Get It Now';
   var02.classList.add('girl','img-responsive');
   var06.classList.add('btn','btn-default','get');
+  var06a.classList.add('btn','btn-default','get');
   console.log(dude34a);
   console.log(data.data[dude34a].images[0].src);
   })
