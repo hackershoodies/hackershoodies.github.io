@@ -136,6 +136,7 @@ data.data.forEach(function(item, ii) {
   var01.appendChild(var07);
   var01a.setAttribute("data-target","#slider-carousel");
   var01b.classList.add("item");
+  if (dude34a < 1){var01b.classList.add("active")};
   var01c.setAttribute("class","col-sm-6");
   var01d.setAttribute("class","col-sm-6");
   var01a.setAttribute("data-slide-to",globalObject1);
@@ -152,6 +153,7 @@ data.data.forEach(function(item, ii) {
   var03.classList.add('product_title');
   var04.innerHTML = data.data[dude34a].description;
   var01g.innerHTML = data.data[dude34a].description;
+  var01g.classList.add("item99");
   var04.classList.add('product_description');
   
   var05.innerHTML = data.data[dude34a].variants[0].price;

@@ -21,6 +21,12 @@ display: none;
 #next{
 display: none;
 }
+
+.item99 p 
+{
+  display: none;
+}
+
 ul li {
   list-style: none;
 }
